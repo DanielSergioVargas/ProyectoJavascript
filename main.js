@@ -65,9 +65,9 @@ function SeleccionarOpcion(){
     }
 }
 
-/* Opcion 1: seleccion por Categoria */
+/* Opcion 1: seleccion por Autor */
 function porAutor (){
-    autorLibro = prompt("Seleccionaste por Autor, cual estas buscando? \nGeorge RR Martin \n Dan Brown \n Gabriel Rolon")
+    autorLibro = prompt("Seleccionaste por Autor, cual estas buscando? \n George RR Martin \n Dan Brown \n Gabriel Rolon")
     buscarAutor = listaLibros.filter((libro) => libro.autor == autorLibro)
     console.log(buscarAutor)
     if(buscarAutor === false){
@@ -141,89 +141,3 @@ function LibroIngresado () {
 }
 
 
-
-
-
-
-
-
-
-
-/* const carritoFinal=[];  */
-
-/* let seleccion = prompt("Desea adquirir/comprar algun ejemplar? Si o No?");
-
-while(seleccion != "si" && seleccion !="no"){
-    alert("Por favor responda si o no");
-    seleccion= prompt("Desea comprar algo?");
-}
-
-if(seleccion == "si"){
-    alert("Excelente! Aqui nuestra lista de libros disponibles");
-    let totalProductos = listadoLibros.map((el) => el.titulo + " " + "$ " +el.precio);
-    alert(totalProductos.join("\n"));
-}
-else if(seleccion == "no"){
-    alert("Gracias por visitarno. Hasta pronto!");
-}
-
-while(seleccion != "no"){
-    let ejemplar = prompt("Agregue el/los ejemplares que desee");
-    let precio =0;
-
-    if(ejemplar=="el cub de los psicopatas" || ejemplar=="los pilares de la tierra" || ejemplar=="el codigo da vinci"
-    || ejemplar=="el precio de la pasion" || ejemplar=="el duelo" || ejemplar=="gente toxica" || ejemplar=="juego de tronos"
-    || ejemplar=="harry potter" || ejemplar=="el señor de los anillos"){
-        switch (ejemplar) {
-            case "el cub de los psicopatas":
-                precio=3500;
-            break;
-            case "los pilares de la tierra":
-                precio=3000;
-            break;
-            case "el codigo da vinci":
-                precio=2500;
-            break;
-            case "el precio de la pasion":
-                precio=4000;
-            break;
-            case "el duelo":
-                precio=4000;
-            break;
-            case "juego de tronos":
-                precio=7500;
-            break;
-            case "harry potter":
-                precio=7500;
-            break;
-            case "el señor de los anillos":
-                precio=5500;
-            break;
-            default:
-                break;
-        }
-
-        let unidades = parseInt(prompt("Cuantos ejemplares desea llevar?"));
-
-        carritoFinal.push(ejemplar, unidades, precio);
-        console.log(carritoFinal);
-        }
-        else{
-            alert("No tenemos ese ejemplar");
-        }
-
-        seleccion=prompt("Desea seguir sumando ejemplares a su carrito?");
-
-        while(seleccion === "no"){
-            alert("Gracias por su compra!");
-            carritoFinal.forEach((carritoFin) => {
-                console.log("Ejemplar: " + carritoFin.ejemplar + "Unidades: " + carritoFin.unidades +
-                "Total a pagar:" + (carritoFin.unidades * carritoFin.precio));
-            })
-            break;
-        }
-    }
- */
-    /* Metodo Reduce para calcular el monto final del carrito */
-/*     const total = carritoFinal.reduce((acc,el) => acc+el.precio*el.unidades,0)
-    console.log("El monto total a pagar es de: " + total); */
