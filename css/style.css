@@ -23,12 +23,12 @@
     text-decoration: underline;
 }
 
-.subtitulo{
+#subtitulo{
     text-align: center;
     margin-top: 40px;
 }
 
-.seccion1{
+#seccion1{
     display: flex;
     flex-direction: row;
     justify-content: center;

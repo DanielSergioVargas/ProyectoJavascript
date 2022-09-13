@@ -77,7 +77,7 @@ function porAutor (){
         filtroNombre = buscarAutor.map(nombres => {
             return nombres.titulo;
         })
-        alert(`Las figuras que se encuentran en la categoria ${autorLibro} son las de: ${filtroNombre}. A continuacion, podra seleccionar el ejemplar de su interes para su compra`)
+        alert(`Las ejemplares que se encuentran en la categoria ${autorLibro} son las de: ${filtroNombre}. A continuacion, podra seleccionar el ejemplar de su interes para su compra`)
         
         pedirLibro();
     }
@@ -86,7 +86,7 @@ function porAutor (){
 /* Opcion 2: seleccion por Titulo */
 function porTitulo () {
 
-    let tituloLibro = prompt("Ingresa el nombre de la figura que estas buscando. Recuerda que la primer letra debe ser en Mayusculas");
+    let tituloLibro = prompt("Ingresa el nombre del ejemplar que esta buscando. Recuerda que la primer letra debe ser en Mayusculas");
     
     let buscarTitulo = listaLibros.some((libro) => libro.titulo == tituloLibro);
     console.log(buscarTitulo);
@@ -140,4 +140,17 @@ function LibroIngresado () {
     }
 }
 
+let h2 = document.getElementById("subtitulo");
+console.log(h2.innerHTML);
+h2.innerHTML = "Los mas vendidos del mes";
 
+const seccionuno = document.getElementById("seccionuno");
+
+const parrafo = document.getElementsByTagName("p");
+console.log(parrafo[0].innerHTML);
+console.log(parrafo[1].innerHTML);
+
+const nuevoTexto = document.createElement("p");
+nuevoTexto.innerText = "Descripcion de nuevo libro ingresado";
+
+seccionuno.append(nuevoTexto);
