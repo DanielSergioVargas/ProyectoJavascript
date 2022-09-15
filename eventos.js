@@ -11,6 +11,9 @@ class Libro{
         this.autor = autor;
         this.precio = precio;
     }
+    sumarIva(){
+        return this.precio = precio * 1.21;
+    }
 }
 /* Creando objetoss */
 let libro1 = new Libro(1,"Juego de Tronos","George RR Martin",7500);
@@ -31,7 +34,8 @@ const seccionCarrito = document.querySelector(".carrito");
 
 function crearCards(){
     listaLibros.forEach(libro =>{
-        seccionContenedora.innerHTML += `<div class="cards"> <h3>Titulo: ${libro.titulo}</h3> 
+        seccionContenedora.innerHTML += `<div class="cards">
+        <h3>Titulo: ${libro.titulo}</h3> 
         <p>Autor: <strong> ${libro.autor} </strong></p>
         <p>Precio: $${libro.precio}</p> 
         <button class="btn-carrito" id="btn-agregar${libro.id}">Agregar al carrito</button> 
@@ -61,12 +65,13 @@ function AgregarAlCarrito(libro){
         libroEncontrado.cantidad++;
     }
     console.log(carrito);
+    renderizarCarrito();
 }
 
 function renderizarCarrito(){
     seccionCarrito.innerHTML = "";
     carrito.forEach(prod=>{
-        carritoDiv.innerHTML += `<div style="padding: 20px; background-color:green; border: 2px solid black;">
+        seccionCarrito.innerHTML += `<div style="padding: 20px; background-color:green; border: 2px solid black;">
         <h4>${prod.titulo}</h4>
         <h3>CANTIDAD: ${prod.cantidad}</h3>
         <p>$${prod.precio}</p>
@@ -77,8 +82,15 @@ function renderizarCarrito(){
     EliminarProducto();
 }
 
-/* function EliminarProducto(){
+function EliminarProducto(){
+    carrito.forEach(producto=>{
+        document.querySelector(`#btn-borrar${producto.id}`).addEventListener("click",()=>{
+            let indice = carrito.findIndex(element=>element.id===producto.id);
+            carrito.splice(indice,1);
+            renderizarCarrito()
+        })
+    })
+}
 
-} */
-
+renderizarCarrito();
 crearCards();
