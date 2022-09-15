@@ -26,6 +26,7 @@
 #subtitulo{
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #seccion1{
@@ -45,6 +46,45 @@
     border: solid 8px blueviolet;
 }
 
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
 
+.carrito{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
 
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 250px;
+    width: 25%;
+    background-image: linear-gradient(to left,blueviolet,black);
+}
+.cards h3{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+}
+.cards p{
+    text-align: center;
+    font-size: large;
+    color: white;
+}
+.btn-carrito{
+    width: fit-content;
+    height: 40px;
+    background-color: white;
+    border: solid 2px black;
+}
 

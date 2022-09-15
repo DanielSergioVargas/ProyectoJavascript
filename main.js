@@ -140,7 +140,7 @@ function LibroIngresado () {
     }
 }
 
-let h2 = document.getElementById("subtitulo");
+/* let h2 = document.getElementById("subtitulo");
 console.log(h2.innerHTML);
 h2.innerHTML = "Los mas vendidos del mes";
 
@@ -154,3 +154,4 @@ const nuevoTexto = document.createElement("p");
 nuevoTexto.innerText = "Descripcion de nuevo libro ingresado";
 
 seccionuno.append(nuevoTexto);
+ */
