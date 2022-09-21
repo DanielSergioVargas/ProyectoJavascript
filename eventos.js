@@ -1,6 +1,6 @@
 /* Array */
 const listaLibros=[];
-let carrito=[];
+let carrito= JSON.parse(localStorage.getItem("carrito")) || [];
 
 
 /* Clase Constructora */
@@ -12,7 +12,7 @@ class Libro{
         this.precio = precio;
     }
     sumarIva(){
-        return this.precio = precio * 1.21;
+        return this.precio *= 1.21;
     }
 }
 /* Creando objetoss */
@@ -71,14 +71,14 @@ function AgregarAlCarrito(libro){
 function renderizarCarrito(){
     seccionCarrito.innerHTML = "";
     carrito.forEach(prod=>{
-        seccionCarrito.innerHTML += `<div style="padding: 20px; background-color:green; border: 2px solid black;">
+        seccionCarrito.innerHTML += `<div class = "carritoCompras">
         <h4>${prod.titulo}</h4>
-        <h3>CANTIDAD: ${prod.cantidad}</h3>
+        <h3>Cantidad: ${prod.cantidad}</h3>
         <p>$${prod.precio}</p>
         <button class="btnCarrito" id="btn-borrar${prod.id}">Eliminar</button>
-        <button class="btnCarrito" id="btn-borrarUnoSolo${prod.id}">-</button>
         </div>`
     })
+    localStorage.setItem("carrito", JSON.stringify(carrito));
     EliminarProducto();
 }
 
@@ -87,7 +87,7 @@ function EliminarProducto(){
         document.querySelector(`#btn-borrar${producto.id}`).addEventListener("click",()=>{
             let indice = carrito.findIndex(element=>element.id===producto.id);
             carrito.splice(indice,1);
-            renderizarCarrito()
+            renderizarCarrito();
         })
     })
 }
