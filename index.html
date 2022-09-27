@@ -26,15 +26,25 @@
                 <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Catalogo</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>
               </li>
             </ul>
           </div>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Registrarse
+            </button>
+            <form action="" id="form-ingreso" class="dropdown-menu">
+                <label for="nombreUsuario" class="nombreUsuario">Usuario</label>
+                <input class="nombreUsuario__input" type="text" id="nombreUsuario" name="nombre">
+                <label for="contraseñaUsuario" class="contraseñaUsuario">Contraseña</label>
+                <input class="contraseñaUsuario__input" type="password" id="contraseñaUsuario" name="contraseña">
+                <button type="submit" class="btn__ingresar">Ingresar</button>
+            </form>
+        </div>
         </div>
   </nav>
+  <p class="validarIngreso"></p>
     
   <h1 id="subtitulo">Los mas vendidos del mes</h1>
 
@@ -42,33 +52,30 @@
   </div>
 
   <div class="carrito">
+
   </div>
   
-  
-  
-
-
-
-
-
-  <!-- <section id="seccion1">
-    <div class="ejemplar">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ea facere ducimus natus cumque? Fuga, quam placeat sequi explicabo nemo quis atque ipsam? Nam officia ex consequatur laudantium. Impedit, vero?</p>
+  <h3></h3>
+  <footer class="footer">
+    <p class="creditos">2022. Buenos Aires, Argentina. Todos los derechos reservados</p>
+    <div class="redes">
+      <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https:/www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
     </div>
-    <div class="ejemplar">
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat debitis perferendis voluptatibus minima earum sit est molestias distinctio facere nam. Veniam, eos natus rerum nisi magni saepe numquam quisquam voluptatibus?</p>
-    </div>
-    <div class="ejemplar">
-    </div>
-  </section> -->
-        
+  </footer>
     
       
     <!-- Scripts Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     
+    <script src="https://kit.fontawesome.com/680326f877.js" crossorigin="anonymous"></script>
     <!-- <script src="main.js"></script> -->
+    
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="eventos.js"></script>
 </body>
 </html>
+

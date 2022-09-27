@@ -11,10 +11,11 @@
 .navbar a{
     padding-left: 25px;
     font-size: x-large;
-    color: white;
+    color: rgb(41, 33, 33);
     text-decoration: none; 
     padding-top: 15px;
     padding-bottom: 15px;
+    color: white;
 }
 
 .nav-item{
@@ -91,7 +92,9 @@
     width: fit-content;
     height: 40px;
     background-color: white;
-    border: solid 2px black;
+    margin: auto;
+    border-radius: 0.5rem;
+    font-weight: bold;
 }
 
 .carrito{
@@ -128,4 +131,58 @@
 .carritoCompras p{
     text-align: center;
 }
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40px;
+    background-image: linear-gradient(to left,blueviolet,black);
+    height: 120px;
+}
+
+.creditos{
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.redes{
+    margin-bottom: 40px;
+}
+
+i{
+    width: 150px;
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+}
+
+.dropdown{
+    position: relative;
+    padding-right: 60px;
+}
+
+.btn{
+    color: white;
+    font-size: x-large;
+}
+
+form{
+    width: fit-content;
+    height: auto;
+}
+
+.btn__ingresar{
+    color: white;
+    background-image: linear-gradient(to left,blueviolet,black);
+    font-weight: bold;
+    border-radius: 0.5rem;
+    padding: 0.3rem 2rem;
+    margin: 1rem auto;
+}
+
+
 
