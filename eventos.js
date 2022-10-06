@@ -23,8 +23,21 @@ class Libro{
         return this.precio *= 1.21;
     }
 }
+
+const listadoLibros = [
+    {id: 1, titulo: "Juego de Tronos", autor:"George RR Martin", precio: 7500},
+    {id: 2, titulo: "Los Pilares de la Tierra", autor:"Ken Follett", precio:3000},
+    {id: 3, titulo: "El Codigo Da Vinci",autor: "Dan Brown", precio: 2500},
+    {id: 4, titulo: "El Precio de la Pasion", autor: "Gabriel Rolon", precio: 4000},
+    {id: 5, titulo: "El Duelo", autor: "Gabriel Rolon",precio: 4000},
+    {id: 6, titulo: "Gente Toxica", autor: "Bernardo Stamateas",precio: 3500},
+    {id: 7, titulo: "Tormenta de Espadas", autor: "George RR Martin", precio: 7500},
+    {id: 8, titulo: "Angeles y Demonios", autor: "Dan Brown", precio: 4500},
+    {id: 9, titulo: "El Senor de los Anillos: El Retorno del Rey", autor: "JRR Tolkien", precio: 5500},
+];
+
 /* Creando objetoss */
-let libro1 = new Libro(1,"Juego de Tronos","George RR Martin",7500);
+/* let libro1 = new Libro(1,"Juego de Tronos","George RR Martin",7500);
 let libro2 = new Libro(2,"Los Pilares de la Tierra","Ken Follett",3000);
 let libro3 = new Libro(3,"El Codigo Da Vinci","Dan Brown",2500);
 let libro4 = new Libro(4,"El Precio de la Pasion","Gabriel Rolon",4000);
@@ -32,10 +45,11 @@ let libro5 = new Libro(5,"El Duelo","Gabriel Rolon",4000);
 let libro6 = new Libro(6,"Gente Toxica","Bernardo Stamateas",3500);
 let libro7 = new Libro(7,"Tormenta de Espadas","George RR Martin",7500);
 let libro8 = new Libro(8,"Angeles y Demonios","Dan Brown",4500);
-let libro9 = new Libro(9,"El Senor de los Anillos: El Retorno del Rey","JRR Tolkien",5500);
+let libro9 = new Libro(9,"El Senor de los Anillos: El Retorno del Rey","JRR Tolkien",5500); */
 
 /* Guardo los objetos en mi array */
-listaLibros.push(libro1,libro2,libro3,libro4,libro5,libro6,libro7,libro8,libro9);
+/* listaLibros.push(libro1,libro2,libro3,libro4,libro5,libro6,libro7,libro8,libro9); */
+
 
 
 /* Evento click para ingreso de usuario */
@@ -87,22 +101,34 @@ formularioIngreso.addEventListener('submit', (e) => {
 const seccionContenedora = document.querySelector(".container");
 const seccionCarrito = document.querySelector(".carrito");
 
-function crearCards(){
-    listaLibros.forEach(libro =>{
+
+/* Uso de fetch y await en funcion asincronica*/
+const respuesta = async () => {
+    const response = await fetch("./json/productos.json")
+    const data = await response.json();
+
+    crearCards(data);
+}
+respuesta();
+
+function crearCards(array){
+    array.forEach((libro) =>{
+        /* Destructuring */
+        let{titulo, autor, precio, id}= libro;
         /* Sugar syntax += */
         seccionContenedora.innerHTML += `<div class="cards">
-        <h3>Titulo: ${libro.titulo}</h3> 
-        <p>Autor: <strong> ${libro.autor} </strong></p>
-        <p>Precio: $${libro.precio}</p> 
-        <button class="btn-carrito" id="btn-agregar${libro.id}">Agregar al carrito</button> 
+        <h3>Titulo: ${titulo}</h3> 
+        <p>Autor: <strong> ${autor} </strong></p>
+        <p>Precio: $${precio}</p> 
+        <button class="btn-carrito" id="btn-agregar${id}">Agregar al carrito</button> 
         </div>`;
     });
-    funcionBoton();
+    funcionBoton(array);
 }
 
 /* Funcion con eventos para el click de boton Agregar */
-function funcionBoton(){
-    listaLibros.forEach(libro => {
+function funcionBoton(arr){
+    arr.forEach(libro => {
         document.querySelector(`#btn-agregar${libro.id}`).addEventListener("click",() =>{
             AgregarAlCarrito(libro);
         })
@@ -154,4 +180,7 @@ function EliminarProducto(){
 }
 
 renderizarCarrito();
-crearCards();
+
+
+
+

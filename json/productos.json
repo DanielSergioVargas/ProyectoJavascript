@@ -1,0 +1,56 @@
+[
+    {
+       "id":1,
+       "titulo":"Juego de Tronos",
+       "autor":"George RR Martin",
+       "precio":7500
+    },
+    {
+       "id":2,
+       "titulo":"Los Pilares de la Tierra",
+       "autor":"Ken Follett",
+       "precio":3000
+    },
+    {
+       "id":3,
+       "titulo":"El Codigo Da Vinci",
+       "autor":"Dan Brown",
+       "precio":2500
+    },
+    {
+       "id":4,
+       "titulo":"El Precio de la Pasion",
+       "autor":"Gabriel Rolon",
+       "precio":4000
+    },
+    {
+       "id":5,
+       "titulo":"El Duelo",
+       "autor":"Gabriel Rolon",
+       "precio":4000
+    },
+    {
+       "id":6,
+       "titulo":"Gente Toxica",
+       "autor":"Bernardo Stamateas",
+       "precio":3500
+    },
+    {
+       "id":7,
+       "titulo":"Tormenta de Espadas",
+       "autor":"George RR Martin",
+       "precio":7500
+    },
+    {
+       "id":8,
+       "titulo":"Angeles y Demonios",
+       "autor":"Dan Brown",
+       "precio":4500
+    },
+    {
+       "id":9,
+       "titulo":"El Senor de los Anillos: El Retorno del Rey",
+       "autor":"JRR Tolkien",
+       "precio":5500
+    }
+ ]
