@@ -155,20 +155,35 @@ function AgregarAlCarrito(libro){
 /* Funcion para renderizar el carrito */
 function renderizarCarrito(){
     seccionCarrito.innerHTML = "";
-    carrito.forEach(prod=>{
+
+    /* Imprimo carrito vacio */
+    carrito.length === 0 &&
+    (seccionCarrito.innerHTML = '<h2 class="carVacio">Tu carrito está vacio</h2>')
+
+    
+    carrito.forEach(prod => {
+        let valorSuma = `${prod.precio * prod.cantidad}`
+        /* Destructuring transformo en variables las prop del objeto prod. */
+        let { titulo, cantidad, precio, id } = prod
+
         /* Sugar syntax += */
         seccionCarrito.innerHTML += `<div class = "carritoCompras">
-        <h4>${prod.titulo}</h4>
-        <h3>Cantidad: ${prod.cantidad}</h3>
-        <p>$${prod.precio}</p>
-        <button class="btnCarrito" id="btn-borrar${prod.id}">Eliminar</button>
+        <h4>${titulo}</h4>
+        <h3>Cantidad: ${cantidad}</h3>
+        <p>$${valorSuma}</p>
+        <button class="btnCarrito" id="btn-borrar${id}">Eliminar</button>
         </div>`
     })
+
+    /* Saco el total del precio del carrito con metodo .reduce */
+    let total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
+
     localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("total", JSON.stringify(total));    
     EliminarProducto();
 }
 
-/* FUncion que me permite eliminar productos de a uno */
+/* Funcion que me permite eliminar productos de a uno */
 function EliminarProducto(){
     carrito.forEach(producto=>{
         document.querySelector(`#btn-borrar${producto.id}`).addEventListener("click",()=>{
@@ -182,5 +197,46 @@ function EliminarProducto(){
 renderizarCarrito();
 
 
+const botonFinalizar = document.createElement('button');
+botonFinalizar.innerText = 'Comprar';
+botonFinalizar.classList.add('btnFinalizar')
+carritoCompras.append(botonFinalizar);
 
+botonFinalizar.addEventListener('click', FinalizarCompra);
 
+function FinalizarCompra(){
+  /* Recupero valor del carrito de localstorage */
+  let totalCarrito = JSON.parse(localStorage.getItem('total'))
+
+  /* Para cuando el carrito esta vacio */
+  if (totalCarrito == 0) {
+    /* Sweet Alert */
+    Swal.fire('¡Tu carrito esta vacio!', 'Selecciona algún producto', 'warning')
+  } 
+  else {
+    carritoCompras.innerHTML = `<div class="card">
+    <h3 class="totalFinal">Tu total es: $ ${totalCarrito}</h3>
+    <button type="button" class="btn btn-default"id="confirm-purchase">Confirmar compra</button>  </div>
+    `
+  }
+
+  let confirmarCompra = document.getElementById('confirm-purchase')
+  confirmarCompra.addEventListener('click', FinalizarPedido)
+}
+
+function FinalizarPedido(){
+    carritoCompras.innerHTML = ''
+    Swal.fire(
+      nombreUsuario.value.toUpperCase(),
+      '!Gracias por tu compra!',
+  
+      'success',
+    )
+    carritoCompras.innerHTML =
+      `<div> 
+    <h3 class="saludoFin">¡Gracias por Tu compra!</h3>
+    <h3 class="textoPedido"> El pedido está siendo procesado</h3>` +
+      `<div class="linkDiv"> <a class="regresoInicio" href="./index.html">Regresar al inicio</a></div></div>`
+  
+    localStorage.setItem('carrito', JSON.stringify(''))
+}
