@@ -48,17 +48,48 @@
     
   <h1 id="subtitulo">Nuestros ejemplares mas vendidos</h1>
 
+  <!-- Contenedor en el que se encuentran las cards de los productos -->
   <div class="container">
   </div>
 
-  
-
+  <!-- Seccion del carrito con los producto seleccionados para la compra -->
   <section id="carritoCompras">
     <div class="carrito">
     </div>
   </section>
-  
-  
+
+
+  <!-- Formulario de Contacto -->
+  <section class="container mt-4" id="formulario">
+    <h3 class="tituloForm">Queres recibir notificaciones semanalmente? Contactanos</h3>
+    <form class="row">
+      <div class="col-md-6">
+        <label for="firstName" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="firstName" required="">
+      </div>
+      <div class="col-md-6">
+        <label for="lastName" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="lastName" required="">
+      </div>
+      <div class="col-md-8">
+        <label for="emailInfo" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="emailInfo" placeholder="correo@ejemplo.com" required="">
+      </div>
+      <div class="col-md-4">
+        <label for="phoneNumber" class="form-label">Teléfono (Opcional)</label>
+        <input type="number" class="form-control" id="phoneNumber" placeholder="+549 1123456789">
+      </div>
+      <div class="col-md-12">
+        <label for="comments" class="form-label">Tu mensaje</label>
+        <textarea class="form-control" id="comments" rows="5"></textarea>
+      </div>
+      <div class="col-md-12 pt-3 pb-3">
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer de la pagina -->
   <footer class="footer">
     <p class="creditos">2022. Buenos Aires, Argentina. Todos los derechos reservados</p>
     <div class="redes">

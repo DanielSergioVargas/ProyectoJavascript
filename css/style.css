@@ -175,6 +175,14 @@ form{
     height: auto;
 }
 
+.nombreUsuario{
+    color: black;
+}
+
+.contraseñaUsuario{
+    color: black;
+}
+
 .btn__ingresar{
     color: white;
     background-image: linear-gradient(to left,blueviolet,black);
@@ -253,3 +261,22 @@ a{
     box-shadow: 0px 0px 20px black;
 }
 
+
+.tituloForm{
+    text-align: center;
+    margin-top: 40px;
+}
+
+label{
+    font-size: larger;
+    color: white;
+}
+
+.row{
+    background-image: linear-gradient(to left,blueviolet,black);
+
+}
+
+#formulario{
+    margin-bottom: 50px;
+}

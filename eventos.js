@@ -196,13 +196,14 @@ function EliminarProducto(){
 
 renderizarCarrito();
 
-
+/* Declaro y asigno boton para terminar la compra */
 const botonFinalizar = document.createElement('button');
 botonFinalizar.innerText = 'Comprar';
 botonFinalizar.classList.add('btnFinalizar')
 carritoCompras.append(botonFinalizar);
-
+/* Agrego un evento a ese boton */
 botonFinalizar.addEventListener('click', FinalizarCompra);
+
 
 function FinalizarCompra(){
   /* Recupero valor del carrito de localstorage */
@@ -224,14 +225,17 @@ function FinalizarCompra(){
   confirmarCompra.addEventListener('click', FinalizarPedido)
 }
 
+/* Funcion para finalizar la compra */
 function FinalizarPedido(){
     carritoCompras.innerHTML = ''
+    /* Sweet Alert */
     Swal.fire(
       nombreUsuario.value.toUpperCase(),
       '!Gracias por tu compra!',
   
       'success',
     )
+    /* Imprimo el siguient contenido una vez terminada la compra */
     carritoCompras.innerHTML =
       `<div> 
     <h3 class="saludoFin">¡Gracias por Tu compra!</h3>
